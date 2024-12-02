@@ -2,12 +2,10 @@ from utils import getInputLines
 
 
 def check_level(level):
-    increasing = True if level[1] - level[0] > 0 else False
+    increasing = True if level[-1] - level[0] > 0 else False
     safe = True
     for i in range(len(level) - 1):
-        difference = level[i + 1] - level[i]
-        if not increasing:
-            difference *= -1
+        difference = level[i + 1] - level[i] if increasing else level[i] - level[i + 1]
         if not 1 <= difference <= 3:
             safe = False
             break
