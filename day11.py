@@ -1,28 +1,26 @@
-def stone_multiplication(number, blinks, memo):
+from functools import cache
+
+
+@cache
+def stone_multiplication(number, blinks):
     if blinks == 0:
         return 1
-    if (number, blinks) in memo:
-        return memo[(number, blinks)]
     if number == 0:
-        val = stone_multiplication(1, blinks - 1, memo)
+        return stone_multiplication(1, blinks - 1)
     elif len(str(number)) % 2 == 0:
         num_str = str(number)
         num1, num2 = int(num_str[:len(num_str) // 2]), int(num_str[len(num_str) // 2:])
-        val = stone_multiplication(num1, blinks - 1, memo) + stone_multiplication(num2, blinks - 1, memo)
+        return stone_multiplication(num1, blinks - 1) + stone_multiplication(num2, blinks - 1)
     else:
-        val = stone_multiplication(number * 2024, blinks - 1, memo)
-    memo[(number, blinks)] = val
-    return val
+        return stone_multiplication(number * 2024, blinks - 1)
 
 
 def part1(stones):
-    memo = {}
-    return sum([stone_multiplication(stone, 25, memo) for stone in stones])
+    return sum([stone_multiplication(stone, 25) for stone in stones])
 
 
 def part2(stones):
-    memo = {}
-    return sum([stone_multiplication(stone, 75, memo) for stone in stones])
+    return sum([stone_multiplication(stone, 75) for stone in stones])
 
 
 input_stones = [int(stone) for stone in open("inputs/day11.txt").read().split()]
