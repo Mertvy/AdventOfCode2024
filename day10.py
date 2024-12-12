@@ -1,4 +1,4 @@
-from utils import getInputLines
+from utils import get_input_lines
 
 
 def trail_DFS(t_map, x, y, visit=False, visited=None):
@@ -38,6 +38,6 @@ def part2(t_map):
     return total
 
 
-topographic_map = [[int(c) for c in line] for line in getInputLines("inputs/day10.txt")]
+topographic_map = [[int(c) for c in line] for line in get_input_lines("inputs/day10.txt")]
 print(part1(topographic_map))
 print(part2(topographic_map))

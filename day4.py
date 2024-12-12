@@ -1,4 +1,4 @@
-from utils import getInputLines
+from utils import get_input_lines
 from itertools import product
 
 
@@ -40,6 +40,6 @@ def part2(word_search):
     return sum(check_crossmas(word_search, (x, y)) for y in range(1, len(word_search) - 1) for x in range(1, len(word_search[y]) - 1))
 
 
-input_word_search = getInputLines("inputs/day4.txt")
+input_word_search = get_input_lines("inputs/day4.txt")
 print(part1(input_word_search))
 print(part2(input_word_search))

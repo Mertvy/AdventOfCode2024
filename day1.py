@@ -1,4 +1,4 @@
-from utils import getInputLines
+from utils import get_input_lines
 
 
 def part1(left_list, right_list):
@@ -23,7 +23,7 @@ def part2(left_list, right_list):
     return similarity_score
 
 
-input_lines = getInputLines("inputs/day1.txt")
+input_lines = get_input_lines("inputs/day1.txt")
 left_list = []
 right_list = []
 for line in input_lines:

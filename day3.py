@@ -1,4 +1,4 @@
-from utils import getInputLines
+from utils import get_input_lines
 import re
 
 

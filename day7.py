@@ -1,4 +1,4 @@
-from utils import getInputLines
+from utils import get_input_lines
 
 
 def cint(n):
@@ -30,7 +30,7 @@ def part2(equations):
     return sum([equation[0] for equation in equations if is_solvable(equation[0], equation[1], len(equation[1]) - 1, True)])
 
 
-input_lines = getInputLines("inputs/day7.txt")
+input_lines = get_input_lines("inputs/day7.txt")
 equations = []
 for line in input_lines:
     value, operands = line.split(': ')

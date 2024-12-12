@@ -1,4 +1,4 @@
-from utils import getInputLines
+from utils import get_input_lines
 
 
 def slide(arr, old_index, new_index):
@@ -44,7 +44,7 @@ def part2(page_orderings, production_queues):
     return total
 
 
-instructions = getInputLines("inputs/day5.txt")
+instructions = get_input_lines("inputs/day5.txt")
 break_line = instructions.index("")
 page_ordering_rules, input_production_queues = instructions[:break_line], instructions[break_line + 1:]
 input_production_queues = [[int(page) for page in queue.split(',')] for queue in input_production_queues]

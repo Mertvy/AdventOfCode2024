@@ -1,4 +1,4 @@
-from utils import getInputLines
+from utils import get_input_lines
 
 
 def check_level(level):
@@ -33,7 +33,7 @@ def part2(data):
     return safe_levels
 
 
-lines = getInputLines("inputs/day2.txt")
+lines = get_input_lines("inputs/day2.txt")
 input_data = [[int(num) for num in line.split()] for line in lines]
 
 print(part1(input_data))

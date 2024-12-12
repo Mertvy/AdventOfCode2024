@@ -1,4 +1,4 @@
-from utils import getInputLines
+from utils import get_input_lines
 from math import gcd
 
 
@@ -42,7 +42,7 @@ def part2(antennas, anti_nodes):
     return sum(sum([1 if cell else 0 for cell in row]) for row in anti_nodes)
 
 
-input_grid = [list(line) for line in getInputLines("inputs/day8.txt")]
+input_grid = [list(line) for line in get_input_lines("inputs/day8.txt")]
 antenna_dict = {}
 for row in range(len(input_grid)):
     for col in range(len(input_grid[row])):
